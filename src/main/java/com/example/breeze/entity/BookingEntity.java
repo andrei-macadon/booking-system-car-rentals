@@ -39,18 +39,14 @@ public class BookingEntity {
     @Column(name = "amount")
     private Integer amount;
 
-    @OneToOne(
-//            fetch = FetchType.EAGER
-    )
+    @OneToOne
     @JoinColumn(
             name = "car_name",
             referencedColumnName = "model_name"
     )
     private CarEntity bookingsCarEntity;
 
-    @ManyToOne(
-//            fetch = FetchType.EAGER
-    )
+    @ManyToOne
     @JoinColumn(
             name = "insurance_type",
             referencedColumnName = "coverageType"
@@ -63,29 +59,21 @@ public class BookingEntity {
     @Column
     private Long totalLateFee;
 
-    // THIS HAS TO BE MANY TO ONE
-    @ManyToOne(
-//            cascade = CascadeType.ALL,
-//            fetch = FetchType.EAGER
-    )
+    @ManyToOne
     @JoinColumn(
             name = "customer_email",
             referencedColumnName = "email"
     )
     private CustomerEntity customerEntity;
 
-    @ManyToOne(
-//            fetch = FetchType.EAGER
-    )
+    @ManyToOne
     @JoinColumn(
             name = "pickup_location",
             referencedColumnName = "location_name"
     )
     private LocationEntity pickupLocation;
-//
-    @ManyToOne(
-//            fetch = FetchType.EAGER
-    )
+
+    @ManyToOne
     @JoinColumn(
             name = "drop_location",
             referencedColumnName = "location_name"

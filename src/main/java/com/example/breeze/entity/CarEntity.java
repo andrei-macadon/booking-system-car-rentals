@@ -1,10 +1,7 @@
 package com.example.breeze.entity;
 
 import lombok.*;
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Builder
@@ -56,9 +53,7 @@ public class CarEntity implements Serializable {
     )
     private boolean availabilityFlag;
 
-    @ManyToOne(
-//            fetch = FetchType.LAZY
-    )
+    @ManyToOne
     @JoinColumn(
             name = "category",
             referencedColumnName = "car_category_id"

@@ -102,22 +102,6 @@ public class AuthController {
         }
         System.out.println(registrationRequest.getLicenseExpiryDate().replace('/','-'));
 
-//        CustomerEntity customerEntity = new CustomerEntity(
-//                registrationRequest.getFirstName(),
-//                registrationRequest.getLastName(),
-//                registrationRequest.getEmail(),
-//                new SimpleDateFormat("dd-MM-yyyy").parse(registrationRequest.getBirthdate().replace('/','-')),
-//                registrationRequest.getPhoneNumber(),
-//                registrationRequest.getCountry(),
-//                registrationRequest.getCity(),
-//                registrationRequest.getStreet(),
-//                registrationRequest.getZipcode(),
-//                registrationRequest.getDriversLicenseNumber(),
-//                new SimpleDateFormat("dd-MM-yyyy").parse(registrationRequest.getLicenseIssueDate().replace('/','-')),
-//                new SimpleDateFormat("dd-MM-yyyy").parse(registrationRequest.getLicenseExpiryDate().replace('/','-')),
-//                registrationRequest.getLicenseIssueCountry(),
-//                passwordEncoder.encode(registrationRequest.getPassword())
-//            );
         CustomerEntity customerEntity = CustomerEntity.builder()
                 .firstName(registrationRequest.getFirstName())
                 .lastName(registrationRequest.getLastName())
@@ -145,6 +129,4 @@ public class AuthController {
 
         return ResponseEntity.ok().body("You have successfully created your account!");
     }
-
-
 }

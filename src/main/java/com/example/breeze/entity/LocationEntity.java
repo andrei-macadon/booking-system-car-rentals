@@ -40,25 +40,14 @@ public class LocationEntity implements Serializable {
     private String zipcode;
 
     @OneToMany(
-//            cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
-//            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "cars_location_id",
             referencedColumnName = "locationId"
     )
-//    @Transient
     private List<CarEntity> carEntities;
 
-//            (
-////            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY
-//    )
-//    @JoinColumn(
-//            name = "pickup_loc_id",
-//            referencedColumnName = "locationId"
-//    )
     @OneToMany
     @Transient
     private List<BookingEntity> bookingEntities;

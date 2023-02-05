@@ -28,7 +28,6 @@ public class RentalCarInsuranceEntity implements Serializable {
             generator = "rental_car_insurance_sequence"
     )
     private Long insuranceCode;
-//    private String insuranceName;
     private String coverageType;
     private Integer costPerDay;
     private Integer excess;
